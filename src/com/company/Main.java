@@ -20,16 +20,25 @@ public class Main {
                 field[i][j] = "S";
             }
         }
+
+        printField(field,numberOfRows,numberOfSeats);
     }
 
-    static void printField(String[][] field) {
-        //System.out.println("Cinema:");
-        //        for (String[] strings : field) {
-        //            for (String string : strings) System.out.print(string + " ");
-        //            System.out.println("\n");
-        //        }
+    static void printField(String[][] field, int numberOfRows, int numberOfSeats) {
+        System.out.println("Cinema:"); System.out.print("  ");
 
+        for (int i = 0; i <= numberOfRows; i++) {
+            System.out.print((i+1) + " ");
+        }
+        System.out.println("");
 
+        for (int i = 0; i < numberOfRows; i++) {
+            System.out.print((i + 1) + " ");
+            for (int j = 1; j < numberOfSeats + 1; j++) {
+                System.out.print(field[i][j - 1] + " ");
+            }
+            System.out.println();
+        }
     }
 
     static void sold() {
@@ -67,6 +76,17 @@ public class Main {
 
     public static void main(String[] args) {
         {
+            getInfo();
         }
     }
 }
+
+//Cinema:
+//  1 2 3 4 5 6 7 8
+//1 S S S S S S S S
+//2 S S S S S S S S
+//3 S S S S S S S S
+//4 S S S S S S S S
+//5 S S S S S S S S
+//6 S S S S S S S S
+//7 S S S S S S S S
