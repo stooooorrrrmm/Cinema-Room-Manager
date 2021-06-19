@@ -4,12 +4,32 @@ import java.util.Scanner;
 
 public class Main {
 
-    static void printField(String[][] field) {
-        System.out.println("Cinema:");
-        for (String[] strings : field) {
-            for (String string : strings) System.out.print(string + " ");
-            System.out.println();
+    static void getInfo() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the number of rows:"); System.out.print("> ");
+        int numberOfRows = in.nextInt(); System.out.println();
+
+        System.out.println("Enter the number of seats in each row: "); System.out.print("> ");
+        int numberOfSeats = in.nextInt(); System.out.println();
+
+        String[][] field = new String[numberOfRows][numberOfSeats];
+
+        for (int i = 0; i < numberOfRows; i++) {
+            for (int j = 0; j < numberOfSeats; j++) {
+                field[i][j] = "S";
+            }
         }
+    }
+
+    static void printField(String[][] field) {
+        //System.out.println("Cinema:");
+        //        for (String[] strings : field) {
+        //            for (String string : strings) System.out.print(string + " ");
+        //            System.out.println("\n");
+        //        }
+
+
     }
 
     static void sold() {
@@ -45,19 +65,8 @@ public class Main {
         System.out.println("$" + sold);
     }
 
-
     public static void main(String[] args) {
-        String[][] field = {
-                { " ", "1", "2", "3", "4", "5", "6", "7", "8" },
-                { "1", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "2", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "3", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "4", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "5", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "6", "S", "S", "S", "S", "S", "S", "S", "S" },
-                { "7", "S", "S", "S", "S", "S", "S", "S", "S" }
-        };
-        printField(field);
-        sold();
+        {
+        }
     }
 }
