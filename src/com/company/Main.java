@@ -25,8 +25,20 @@ public class Main {
             }
         }
 
-        printField(field, numberOfRows, numberOfSeats);
-        getTickets(field, numberOfRows, numberOfSeats);
+        while (true) {
+            System.out.println("\n1. Show the seats\n" + "2. Buy a ticket\n" + "0. Exit");
+            System.out.print("> ");
+            int choice = in.nextInt();
+            System.out.println();
+
+            switch (choice) {
+                case 1: printField(field, numberOfRows, numberOfSeats); break;
+                case 2: getTickets(field, numberOfRows, numberOfSeats); break;
+                case 0: return;
+                default: System.out.println("Incorrect input! Try again.");
+            }
+        }
+
     }
 
     static void printField(String[][] field, int numberOfRows, int numberOfSeats) {
